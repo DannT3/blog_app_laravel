@@ -8,12 +8,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/list', 'PostController@list');
-Route::get('/create', 'PostController@create');
-Route::post('/create', 'PostController@store');
-Route::get('/posts/{post}', 'PostController@edit');
-Route::post('/posts/{post}', 'PostController@update');
-Route::delete('/posts/{post}', 'Postcontroller@delete');
+Route::get('/list', 'PostController@listPosts');
+Route::get('/create', 'PostController@createPost');
+Route::post('/create', 'PostController@storePost');
+Route::get('/posts/{post}', 'PostController@editPost');
+Route::post('/posts/{post}', 'PostController@updatePost');
+Route::delete('/posts/{post}', 'Postcontroller@deletePost');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
