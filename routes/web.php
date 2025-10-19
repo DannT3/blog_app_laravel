@@ -8,6 +8,18 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/home', function() {
+    return "Hello, World!";
+});
+Route::post('/register', function() {
+    return "register the user";
+});
+Route::post('/create_post', function() {
+    return "Create the post";
+});
+Route::get('/my_posts', function() {
+    return "Your posts: ";
+});
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
