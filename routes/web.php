@@ -11,7 +11,7 @@ Route::get('/', function () {
 Route::get('/home', function() {
     return "Hello, World!";
 });
-Route::post('/register', function() {
+Route::post('/register_user', function() {
     return "register the user";
 });
 Route::post('/create_post', function() {
@@ -19,6 +19,21 @@ Route::post('/create_post', function() {
 });
 Route::get('/my_posts', function() {
     return "Your posts: ";
+});
+Route::get('/posts', function() {
+    return "All posts: ";
+});
+Route::get('/posts/{post}', function() {
+    return 'post details: ';
+});
+Route::post('/login_user', function() {
+    return 'login page';
+});
+Route::post('/create_comment', function() {
+    return 'Write your comment: ';
+});
+Route::patch('/update_post', function() {
+    return 'Edit your post: ';
 });
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
